@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Backend\Brand;
+use App\Models\Backend\brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Image;
@@ -121,7 +121,7 @@ class BrandController extends Controller
         $brand->is_featured = $request->is_featured;
         $brand->status      = $request->status;
 
-        if ( !is_null($brand->image) ) {
+        if ( !is_null($request->image) ) {
             
             if ( file::exists('Backend/img/brand/'.$brand->image) ) {
                 file::delete('Backend/img/brand/'.$brand->image);

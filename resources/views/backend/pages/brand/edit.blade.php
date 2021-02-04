@@ -49,9 +49,9 @@
 			                <div class="form-group mg-b-10-force">
 			                  <label class="form-control-label">Status: <span class="tx-danger">*</span></label>
 			                  <select name="status" id="" class="form-control">
-			                  	<option value="1" @if( $brand->is_featured ==1 ) selected @endif>Active</option>
-			                  	<option value="2" @if( $brand->is_featured ==2 ) selected @endif>Inactive</option>
-			                  	<option value="0" @if( $brand->is_featured ==0 ) selected @endif>Pending</option>
+			                  	<option value="1" @if ( $brand->status ==1 ) selected @endif >Active</option>
+			                  	<option value="2" @if ( $brand->status ==2 ) selected @endif >Inactive</option>
+			                  	<option value="0" @if ( $brand->status ==0 ) selected @endif >Pending</option>
 			                  </select>
 			                </div>
 			              </div>

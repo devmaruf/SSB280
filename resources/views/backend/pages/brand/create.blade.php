@@ -72,7 +72,7 @@
 			            </div><!-- row -->
 
 			            <div class="form-layout-footer">
-			              <button class="btn btn-info">Create New Brand</button>
+			              <button class="btn btn-info" type="submit">Create New Brand</button>
 			            </div><!-- form-layout-footer -->  
 			        </div>
 				</form>

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Backend\Slider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Image;
+use File;
 
 class Pagescontroller extends Controller
 {
@@ -14,10 +18,8 @@ class Pagescontroller extends Controller
      */
     public function index()
     {
-        return view('backend.dashboard');
-
-
-
+        
+        return view('backend.dashboard' );
 
     }
 

@@ -15,6 +15,8 @@
     <script src="{{ asset('Backend/lib/select2/js/select2.full.min.js') }}"></script>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyAq8o5-8Y5pudbJMJtDFzb8aHiWJufa5fg"></script>
     <script src="{{ asset('Backend/lib/gmaps/gmaps.min.js') }}"></script>
+    <script src="{{ asset('Backend/lib/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+
 
     <script src="{{ asset('Backend/js/bracket.js') }}"></script>
     <script src="{{ asset('Backend/js/map.shiftworker.js') }}"></script>
