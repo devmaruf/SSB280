@@ -17,5 +17,50 @@
     function googleTranslateFunction(){
         new google.translate.TranslateElement({pageLanguage:'en', layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');
     } </script>
-
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateFunction"></script>
+
+
+{{--Toastr Java Script Code--}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script type="text/javascript">
+    @if ( Session::has('message') )
+         var type = "{{ Session::get('alert-type','info') }}";
+
+         switch (type){
+             case 'info':
+                 toastr.info("{{ Session::get('message') }}");
+             break;
+
+             case 'success':
+                 toastr.success("{{ Session::get('message') }}");
+             break;
+
+             case 'warning':
+                 toastr.warning("{{ Session::get('message') }}");
+             break;
+
+             case 'error':
+                 toastr.error("{{ Session::get('message') }}");
+             break;
+     }
+
+     @endif
+</script>
+<script type="text/javascript">
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": true,
+        "positionClass": "toast-top-full-width",
+        "preventDuplicates": true,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
+</script>

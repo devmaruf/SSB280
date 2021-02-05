@@ -60,9 +60,16 @@ class cartController extends Controller
             $cart->product_id       = $request->product_id;
             $cart->product_quantity = $request->product_quantity;
             $cart->save();
+
+
+            $notification = array(
+                'message' => 'Product Added Successfully to the Cart',
+                'alert-type' => 'success'
+            );
+
         }
 
-        return back();
+        return back()->with( $notification );
 
 
 
@@ -79,10 +86,14 @@ class cartController extends Controller
     public function update(Request $request, $id)
     {
         $cart = cart::find($id);
-        if ( !is_null( $cart ) )
-            $cart->product_quantity => $request->
+        if ( !is_null( $cart ) ){
+            $cart->product_quantity = $request->quantity;
+            $cart->save();
+
+            return redirect()->back();
+        }
         else{
-            return back();
+            return redirect()->back();
         }
 
     }

@@ -52,7 +52,14 @@
 
                     @foreach( $total_item as $value)
                         <tr>
-                            <td class="romove-item"><a href="#" title="cancel" class="icon"><i class="fa fa-trash-o"></i></a></td>
+                            <td class="romove-item">
+                                <form action="{{route('cart.destroy',$value->id)}}" method="post">
+                                    @csrf
+                                    <button class="btn btn-secondary" type="submit">
+                                        <i class="fa fa-trash-o"></i>
+                                    </button>
+                                </form>
+                            </td>
                             <td class="cart-image">
                                 <a class="entry-thumbnail" href="detail.html">
                                 <img src="{{ asset('Backend/img/Product_Primary_image') .'/'. $value->product->image  }}" alt="">
@@ -63,12 +70,13 @@
                             </td>
                             {{-- Product Cart Update With Quantity --}}
                             <form action=" {{ route('cart.update', $value->id) }} " method="POST">
+                                @csrf
                                 <td class="cart-product-edit">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-edit"></i></button>
                                 </td>
                                 <td class="cart-product-quantity">
                                     <div class="quant-input">
-                                        <input type="number" class="form-control" value="{{ $value->product_quantity }}">
+                                        <input type="number" name="quantity" class="form-control" value="{{ $value->product_quantity }}">
                                     </div>
                                 </td>
                             </form>
