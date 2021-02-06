@@ -49,6 +49,11 @@ Route::group(['prefix' => 'cart'], function(){
 	Route::post('/delete/{id}','App\Http\Controllers\Frontend\cartController@destroy')->name('cart.destroy');
 });
 
+Route::group(['prefix' => 'checkout'],function(){
+    Route::get('/manage','App\Http\Controllers\Backend\orderController@index')->name('checkout.manage');
+    Route::post('/store','App\Http\Controllers\Backend\orderController@store')->name('checkout.store');
+});
+
 
 // Route::get('/login','App\Http\Controllers\Frontend\PagesController@login')->name('login');
 // Route::get('/register','App\Http\Controllers\Frontend\PagesController@register')->name('register');

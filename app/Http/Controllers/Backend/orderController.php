@@ -4,6 +4,13 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Models\Frontend\cart;
+use App\Models\Backend\Product;
+use App\Models\Backend\Category;
+use App\Models\Backend\Brand;
+use App\Models\Users;
+use Auth;
 
 class orderController extends Controller
 {

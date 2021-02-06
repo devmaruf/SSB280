@@ -38,8 +38,7 @@
                         <td colspan="7">
                             <div class="shopping-cart-btn">
                                 <span class="">
-                                <a href="#" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
-                                <a href="#" class="btn btn-upper btn-primary pull-right outer-right-xs">Update shopping cart</a>
+                                <a href="{{ route('homepage'))#}}" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
                                 </span>
                             </div>
                             <!-- /.shopping-cart-btn -->
@@ -195,10 +194,10 @@
                 <tr>
                     <th>
                         <div class="cart-sub-total">
-                            Subtotal<span class="inner-left-md">$600.00</span>
+                            Subtotal<span class="inner-left-md">$ {{ App\Models\Frontend\cart::totalPrice() }} BDT</span>
                         </div>
                         <div class="cart-grand-total">
-                            Grand Total<span class="inner-left-md">$600.00</span>
+                            Grand Total<span class="inner-left-md">$ {{ App\Models\Frontend\cart::totalPrice() }} BDT</span>
                         </div>
                     </th>
                 </tr>
@@ -208,8 +207,8 @@
                 <tr>
                     <td>
                         <div class="cart-checkout-btn pull-right">
-                            <button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button>
-                            <span class="">Checkout with multiples address!</span>
+                            {{--<button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button>--}}
+                            <a href="" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</a>
                         </div>
                     </td>
                 </tr>

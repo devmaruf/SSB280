@@ -49,7 +49,16 @@ class cartController extends Controller
 
         if( !is_null( $cart ) ){
             $cart->increment('product_quantity');
+
+            $notification = array(
+                'message' => 'Product Added',
+                'alert-type' => 'success'
+            );
+
+            return back()->with( $notification );
+
         }
+
         else{
             $cart = new cart();
 
@@ -61,18 +70,12 @@ class cartController extends Controller
             $cart->product_quantity = $request->product_quantity;
             $cart->save();
 
-
             $notification = array(
                 'message' => 'Product Added Successfully to the Cart',
                 'alert-type' => 'success'
             );
-
         }
-
         return back()->with( $notification );
-
-
-
 
     }
 
@@ -90,7 +93,12 @@ class cartController extends Controller
             $cart->product_quantity = $request->quantity;
             $cart->save();
 
-            return redirect()->back();
+            $notification = array(
+                'message' => 'Cart Update Success',
+                'alert-type' => 'info'
+            );
+
+            return redirect()->back()->with($notification);
         }
         else{
             return redirect()->back();
@@ -109,7 +117,14 @@ class cartController extends Controller
         $cart = cart::find($id);
         if( !is_null( $cart ) ){
             $cart->delete();
-            return redirect()->back();
+
+            $notification = array(
+                'message' => 'Cart Product Remove Success',
+                'alert-type' => 'error'
+            );
+
+            return redirect()->back()->with($notification);
+
 
         }
         else{
