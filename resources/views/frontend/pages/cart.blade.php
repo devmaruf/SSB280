@@ -38,7 +38,7 @@
                         <td colspan="7">
                             <div class="shopping-cart-btn">
                                 <span class="">
-                                <a href="{{ route('homepage'))#}}" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
+                                <a href="{{ route('homepage') }}" class="btn btn-upper btn-primary outer-left-xs">Continue Shopping</a>
                                 </span>
                             </div>
                             <!-- /.shopping-cart-btn -->
@@ -61,7 +61,7 @@
                             </td>
                             <td class="cart-image">
                                 <a class="entry-thumbnail" href="detail.html">
-                                <img src="{{ asset('Backend/img/Product_Primary_image') .'/'. $value->product->image  }}" alt="">
+                                    <img src="{{ asset('Backend/img/Product_Primary_image') .'/'. $value->product->image  }}" alt="">
                                 </a>
                             </td>
                             <td class="cart-product-name-info">
@@ -208,7 +208,7 @@
                     <td>
                         <div class="cart-checkout-btn pull-right">
                             {{--<button type="submit" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</button>--}}
-                            <a href="" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</a>
+                            <a href="{{ route('checkout.page') }}" class="btn btn-primary checkout-btn">PROCCED TO CHEKOUT</a>
                         </div>
                     </td>
                 </tr>

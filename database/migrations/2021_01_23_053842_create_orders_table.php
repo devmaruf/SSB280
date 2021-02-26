@@ -15,6 +15,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->nullable();
+            $table->string('ip_address')->nullable();
             $table->string('first_name');
             $table->string('last_name')->nullable();
             $table->string('email');
@@ -26,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->text('message')->nullable(); 
             $table->integer('product_finalprice')->nullable(); 
             $table->integer('pricewithcoupon')->nullable(); 
-            $table->integer('is_paid')->default(0)->comment('1=Bkash,2=Rocket,3=COD'); 
+            $table->integer('is_paid')->default(0)->comment('0=COD,1=Bkash,2=Rocket,3=Nagod'); 
             $table->integer('payment_id')->nullable();
             $table->string('transaction_id')->nullable(); 
             $table->timestamps();

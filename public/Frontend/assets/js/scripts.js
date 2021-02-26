@@ -336,3 +336,38 @@ jQuery("[data-toggle='tooltip']").tooltip();
 
 
 })
+
+/*===================================================================================*/
+/*  Checkout Page Payment System Form
+/*===================================================================================*/
+$(document).ready(function(){
+
+    $('#Bkash').click(function(){
+        $('.Bkash').removeClass('hide');
+        $('.Rocket').addClass('hide');
+        $('.nagad').addClass('hide');
+        $('.COD').addClass('hide');
+    });
+
+    $('#Rocket').click(function(){
+        $('.Bkash').addClass('hide');
+        $('.Rocket').removeClass('hide');
+        $('.nagad').addClass('hide');
+        $('.COD').addClass('hide');
+    });
+
+    $('#nagad').click(function(){
+        $('.Bkash').addClass('hide');
+        $('.Rocket').addClass('hide');
+        $('.nagad').removeClass('hide');
+        $('.COD').addClass('hide');
+    });
+
+    $('#COD').click(function(){
+        $('.Bkash').addClass('hide');
+        $('.Rocket').addClass('hide');
+        $('.nagad').addClass('hide');
+        $('.COD').removeClass('hide');
+    });
+
+});
